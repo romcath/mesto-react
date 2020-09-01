@@ -1,0 +1,11 @@
+.profile__edit-btn {
+  width: 24px;
+  height: 24px;
+  background: transparent url('../../../images/edit-btn.png') center no-repeat;
+  grid-area: button;
+  align-self: center;
+}
+
+.profile__edit-btn:hover {
+  opacity: .6;
+}

@@ -1,0 +1,13 @@
+.profile__image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity .3s linear;
+}
+
+.profile__image:hover {
+  cursor: pointer;
+  opacity: .6;
+}

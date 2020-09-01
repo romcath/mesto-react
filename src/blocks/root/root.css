@@ -1,0 +1,13 @@
+@import url('./__header/root__header.css');
+@import url('./__profile/root__profile.css');
+@import url('./__cards/root__cards.css');
+@import url('./__footer/root__footer.css');
+
+.root {
+  max-width: 882px;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
