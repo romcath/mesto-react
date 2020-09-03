@@ -5,7 +5,3 @@
   grid-area: button;
   align-self: center;
 }
-
-.profile__edit-btn:hover {
-  opacity: .6;
-}

@@ -6,3 +6,7 @@
   cursor: pointer;
   color: #fff;
 }
+
+.button:hover {
+  opacity: .6;
+}

@@ -7,7 +7,3 @@
   background: transparent url('../../../images/trash-icon.svg') center no-repeat;
   border: none;
 }
-
-.card__delete-btn:hover {
-  opacity: .7;
-}

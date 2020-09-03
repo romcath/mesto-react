@@ -4,7 +4,3 @@
   background: transparent url('../../../images/like-inactive.svg') center no-repeat;
   border: none;
 }
-
-.card__like-btn:hover {
-  opacity: .7;
-}

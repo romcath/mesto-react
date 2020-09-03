@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import PopupWithForm from './PopupWithForm';
 
 function Main() {
   return (
@@ -18,6 +19,7 @@ function Main() {
           <Card />
         </ul>
       </section>
+      <PopupWithForm />
     </main>
   )
 }
