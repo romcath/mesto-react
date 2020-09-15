@@ -1,25 +1,45 @@
 import React from 'react';
 import Card from './Card';
-import PopupWithForm from './PopupWithForm';
+import api from '../utils/api';
 
-function Main() {
+function Main(props) {
+  const [userName, setUserName] = React.useState('');
+  const [userDescription, setUserDescription] = React.useState('');
+  const [userAvatar, setUserAvatar] = React.useState();
+  const [cards, setCards] = React.useState([]);
+
+  React.useEffect(() => {
+    api.getAboutProfile().then((userData) => {
+      setUserName(userData.name);
+      setUserDescription(userData.about);
+      setUserAvatar(userData.avatar);
+    });
+
+    api.getInitialCards().then((cardData) => {
+      setCards(cardData);
+    });
+  }, []);
+
+  const imageStyle = { backgroundImage: `url(${userAvatar})` };
+
+
+
   return (
     <main className="content">
       <section className="profile root__profile">
-        <img src="https://images.unsplash.com/photo-1533035353720-f1c6a75cd8ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="Аватарка" className="profile__image" />
+        <div className="profile__image" onClick={props.onEditAvatar} style={imageStyle}/>
         <div className="profile__info">
-          <h1 className="profile__name">Жак-Ив Кусто</h1>
-          <button className="button profile__edit-btn"></button>
-          <p className="profile__job">Исследователь океана</p>
+          <h1 className="profile__name">{userName}</h1>
+          <button className="button profile__edit-btn" type="button" onClick={props.onEditProfile}></button>
+          <p className="profile__job">{userDescription}</p>
         </div>
-        <button className="button profile__add-btn"></button>
+        <button className="button profile__add-btn" type="button" onClick={props.onAddPlace}></button>
       </section>
       <section className="cards root__cards">
         <ul className="cards__list">
-          <Card />
+          {cards.map((card, i) => <Card key={i} card={card} onCardClick={props.onCardClick} />)}
         </ul>
       </section>
-      <PopupWithForm />
     </main>
   )
 }

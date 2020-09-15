@@ -6,4 +6,6 @@
   position: absolute;
   top: -36px;
   right: -34px;
+  visibility: visible;
+  opacity: 1;
 }

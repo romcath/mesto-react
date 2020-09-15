@@ -1,8 +1,1 @@
 @import url('./__list/cards__list.css');
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill,282px);
-  grid-gap: 21px 18px;
-  justify-content: center;
-}
